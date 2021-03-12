@@ -1,0 +1,122 @@
+{% load static %}
+{% with is_login_page=False is_alert=True String="okey" %}
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title> Login Page </title>
+        <link rel = "stylesheet" style = "text/css" href = "{% static 'css/home.css'%}">
+        <script type = "text/javascript" src = "{% static 'js/jquery.js' %}"> </script>
+        <script type = "text/javascript" src = "{% static 'js/home.js' %}"> </script>
+        <script type= "text/javascript">
+
+            //Define the function to call to ask to python to record microphone
+            const recordManagerfunction = (arg) =>
+            {
+                let message = ((arg == true)?"start":"stop");
+                //Send the request to the concerned python function 
+                $.ajax(
+                    {
+                        type: 'POST',
+                        url: '{{' home '}}',
+                        data: {
+                                csrfmiddlewaretoken: '{{ csrf_token }}',
+                                text: message
+                                },   /* Passing the text data */
+                    }
+                );
+            };
+            //Send function to call when button is pressed by user
+            recorderObj.defineFuntionToCall(recordManagerfunction);
+        </script>
+    </head>
+    <body style = 'background-image: url("{% static 'images/background.png'%}"'>
+        <div class = "form-page">
+
+            <section class = "navbar">
+                <div>
+                    <span> <a href = "#" onclick="changeStateObj.changePage('login')"> LOGIN PAGE </a> </span>
+                    <span> <a href = "#" onclick="changeStateObj.changePage('register')"> REGISTER PAGE </a> </span>   
+                </div>         
+            </section>
+
+            <section class = "container-panes">
+                
+                <section class = "left-pane">
+                    <div>
+                        <img src = "{% static 'images/Avatar-8.png'%}" > </img>
+                        <span> 
+                            <a href = "#" class = "page-name"> LOGIN PAGE </a>
+                        </span>
+                    </div>
+                </section>
+
+                <section class = "right-pane">
+                    <div class = "message-alert error">
+                        <span> Un message ici </span>
+                    </div>
+                    <div class = "form login-form">
+                        <form method = "POST" action = "">
+                            
+                            <div class = "field">
+                                <div class = "field-image">
+                                    <img src = "{% static 'images/User_Male.png'%}" />
+                                </div>
+                                <input type = "text" placeholder = "Enter Your username here!" name = "login-field" required />
+                            </div>
+                            <div class = "field">
+                                <div class = "field-image">
+                                    <img src = "{% static 'images/Secure.png'%}" />
+                                </div>
+                                <input type = "password" placeholder = "Enter Your OTP here!" name = "otp-field" required/>
+                                <div class = "field-image-m">
+                                    <img src = "{% static 'images/Microphone_valid.png'%}" onclick = "recorderObj.manageLabelRecorder()" />
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div>
+                                <button type = "submit" onclick = "validateFormObj.validateForm('login')"> LOGIN </button> 
+                            </div>
+                            {% csrf_token %} 
+                        </form>
+                    </div>
+                    <div class = "form  register-form">
+                        <form method = "POST" action = "">
+                            {% csrf_token %} 
+                            <div class = "field">
+                                <div class = "field-image">
+                                    <img src = "{% static 'images/User_Male.png'%}" />
+                                </div>
+                                <input type = "text" placeholder = "Enter Your username here!" name = "username-field" required />
+                            </div>
+                            <div class = "field">
+                                <div class = "field-image">
+                                    <img src = "{% static 'images/Email_sign_filled.png'%}" />
+                                </div>
+                                <input type = "email" placeholder = "Enter Your email here!" name = "email-field" required/>
+                            </div>
+                            <div>
+                                <button onclick = "validateFormObj.validateForm('register')"> REGISTER </button> 
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <div class = "message-page">
+            <p>
+                YOUR ARE LOGGED IN!
+            </p>
+        </div>
+    </body>
+    <script type = "text/javascript">
+        let forms = document.getElementsByTagName("form");
+        for(var n_itr = 0; n_itr < forms.length; n_itr++)
+        {
+            let a = n_itr;
+            //forms[n_itr].addEventListener("submit", (event) => event.preventDefault());
+        }
+    </script>    
+</html>
+
+{% endwith %}

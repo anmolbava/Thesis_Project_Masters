@@ -1,0 +1,357 @@
+/* Start general style  */
+body
+{
+    background: url("./static/images/background.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(147, 189, 228, 0.7);
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0px;
+}
+
+.form-page
+{
+    width : 50%;
+    height: 80%;
+    margin: 10% 25% 10% 25%;
+    border: solid 1px #0068c5;
+    box-shadow: 0px 0px 6px 2px #589fe2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+a
+{
+    font-family: 'Arial Semibold', Helvetica, sans-serif;
+    font-weight: 600;
+}
+button
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+/* End general style  */
+
+
+/* Start navigation bar style  */
+.form-page .navbar
+{
+    width: 100%;
+    height: 10%;
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form-page .navbar div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.form-page .navbar div span
+{
+    border-right: 1px solid #0068C5; 
+    border-top: 1px solid white;
+    text-align: center;
+}
+
+.form-page .navbar div span a
+{
+    display:block;
+    text-decoration: none;
+    color: white;
+    background-color: #0078E4; 
+    font-size: 14px;
+    padding: 12px 15px 12px 15px;
+    transition: all ease-out .1s;
+    text-shadow: 0px 1px 0px rgba(0, 90, 168, 0.5);
+}
+
+.form-page .navbar div span a:hover
+{
+    background-color:  rgb(0, 90, 168);
+    transition: all ease-in .2s;
+}
+
+.form-page .navbar div span a:focus, .form-page .navbar div span a:active
+{
+    background-color:   rgb(0, 77, 145);
+}
+
+/* End navigation bar style  */
+
+/* Start container pane style  */
+
+.form-page .container-panes
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 90%;
+}
+
+/* Start left pane style  */
+.form-page .container-panes .left-pane
+{
+    width: 40%;
+    min-height: 100%;
+
+    background-color: #59ADFF;
+}
+
+.form-page .container-panes .left-pane > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 80%;
+    background-color: transparent;
+
+    margin: 10% 15% 10% 15%;
+}
+
+.form-page .container-panes .left-pane >div img
+{
+    width: 100%;
+    height: 80%;
+    border: 2px solid white;
+    box-shadow: 0px 0px 0px 6px #589fe2 ;
+    margin: 0% 0% 7% 0%;
+}
+
+.form-page .container-panes .left-pane >div span
+{
+    margin: 0% 5% 0% 5%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.form-page .container-panes .left-pane >div span a
+{
+    margin: 0% 0% 0% 0%;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 6px 6px #589fe2 ;
+}
+/* End left pane style  */
+
+
+/* Start right pane style  */
+.form-page .container-panes .right-pane
+{
+    width: 60%;
+    min-height: 100%;
+    background-color: #ECECEC;
+}
+
+.form-page .container-panes .right-pane .message-alert
+{
+    width : 80%;
+    height: 10%;
+    margin: 5% 10% 0% 10%;
+    padding-top: 1%;
+    text-align: center;
+}
+
+.form-page .container-panes .right-pane .message-alert span
+{
+    text-align: center;
+    margin: 0%;
+    color: white;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-page .container-panes .right-pane .message-alert
+{
+    display: none;
+}
+
+.error
+{
+    background-color: #FC4850;
+}
+
+.valide
+{
+    background-color: #00C520;
+}
+
+.form-page .container-panes .right-pane .form
+{
+    width: 80%;
+    height: 70%;
+    margin: 15% 10% 0% 10%;
+}
+
+.form-page .container-panes .right-pane .form form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: transparent;
+}
+
+.form-page .container-panes .right-pane .form form .field
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.form-page .container-panes .right-pane .form form .field .field-image
+{
+    width: 15%;
+    height: 100%;
+    border: solid 1px #0081FF;
+    background: #59adff;
+}
+
+.form-page .container-panes .right-pane .form form .field .field-image img
+{
+    margin: 0.5em 0.3em 0.15em 0.5em;
+    width: 2em;
+    height: 2em;
+}
+
+.form-page .container-panes .right-pane .form form .field .field-image-m
+{
+    width: 15%;
+    height: 100%;
+    border: solid 1px #0081FF;
+    border-left: none;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-page .container-panes .right-pane .form form .field .field-image-m img
+{
+    margin: 0.6em 0.3em 0.65em 0.7em;
+    width: 1.6em;
+    height: 1.6em;
+}
+
+/* .form-page .container-panes .right-pane .form form .field .field-image-m img
+{
+    margin: 0.3em 0.1em 0.35em 0.8em;
+    width: 1.4em;
+    height: 1.4em;
+    color: white;
+}
+*/
+.form-page .container-panes .right-pane .form form .field .field-image-m span
+{
+    display: none;
+    font-family: "Segeo UI";
+    font-weight: bold;
+    font-size: 8px;
+    text-align: center;
+    margin-bottom: 0.3em;
+    color: #FFFFFF;
+}
+
+.form-page .container-panes .right-pane .form form .field input
+{
+    width: 82%;
+    height: 2.9em;
+    border: solid 1px #0081FF;
+    border-left: none;
+    color: #0081ff;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 27px;
+    padding-left: 10px;
+}
+
+.form-page .container-panes .right-pane .login-form .field:nth-child(2) input
+{
+    width: 67%;
+}
+
+.form-page .container-panes .right-pane .form form .field input:focus
+{
+    outline: 0em;
+    border: solid 1px #0051a1;
+    border-left: none;
+    color:#0051a1;
+}
+
+.form-page .container-panes .right-pane .form form .field input:invalid, 
+.form-page .container-panes .right-pane .form form .field input:required,
+.form-page .container-panes .right-pane .form form .field input:not(output):-moz-ui-invalid
+{
+    box-shadow: none;
+}
+
+.form-page .container-panes .right-pane .form form div button
+{
+
+    width: 100%;
+    height: 2.5em;
+    margin-top: 2%;
+    color: #FFFFFF;
+    background: #59adff;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    border: solid 2px #0081ff;
+}
+
+.form-page .container-panes .right-pane .register-form
+{
+    display: none;
+}
+
+.message-page
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.message-page
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.message-page
+{
+    -webkit-text-stroke: solid 1px #59adff;
+    text-shadow: 0px 0px 15px rgba(0,65,128,0.5);
+    color: #ffffff;
+    font-family: "Segoe UI";
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 96px;
+}
+
+.message-page
+{
+    display: none;
+}
+
+/* End right pane style  */
+/* End container pane style  */
